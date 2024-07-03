@@ -26,7 +26,7 @@ def valve_process_bot(purge_event, purge_done_event):
 	
 	def vent_lower(valv_lower):
 		print("Upper Rising Trigger")
-		time.sleep(0.01)
+		time.sleep(0.02)
 		valv_lower.on()
 			
 	def close_lower(valv_lower):
@@ -53,12 +53,12 @@ def valve_process_top(purge_event, purge_done_event):
 	valv_upper.off()
 	
 	def vent_upper(valv_upper):
-		print("Upper Rising Trigger")
-		time.sleep(0.01)
+		print("Lower Rising Trigger")
+		time.sleep(0.02)
 		valv_upper.on()
 			
 	def close_upper(valv_upper):
-		print("Upper Falling Trigger")
+		print("Lower Falling Trigger")
 		time.sleep(0.6)
 		valv_upper.off()
 	
