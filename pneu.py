@@ -1,6 +1,11 @@
 import gpiozero
 import time
 from signal import pause
+import multiprocessing as mp
+
+
+
+
 
 valv_upper = gpiozero.LED(2) #Valve 1 (for Upper Chamber)
 valv_lower = gpiozero.LED(3)	#Valve 2 (For Lower Chamber)
@@ -28,7 +33,7 @@ def vent_upper():
 	
 	#valv_upper.off()					#Close Valve for Firing upper Chamber
 	
-	time.sleep(0.05)
+	#time.sleep(0.01)
 	valv_upper.on()
 	
 
@@ -44,7 +49,7 @@ def vent_lower():
 	
 	#valv_lower.off()					#Close Valve for Firing lower Chamber
 	
-	time.sleep(0.05)
+	#time.sleep(0.01)
 	valv_lower.on()
 	
 def close_upper():
@@ -52,7 +57,7 @@ def close_upper():
 	To be executed when lower Limit Switch is released
 	'''
 	print("Lower Falling Trigger")
-	time.sleep(0.25)
+	time.sleep(0.6)
 	valv_upper.off()
 	
 def close_lower():
@@ -60,7 +65,7 @@ def close_lower():
 	To be executed when upper Limit Switch is released
 	'''
 	print("Upper Falling Trigger")
-	time.sleep(0.25)
+	time.sleep(0.15)
 	valv_lower.off()
 
 	
