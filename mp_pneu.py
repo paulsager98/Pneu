@@ -61,7 +61,7 @@ def valve_process_top(purge_event, purge_done_event):
 			
 	def close_upper(valv_upper):
 		print("Lower Falling Trigger")
-		time.sleep(0.4)
+		time.sleep(1.55)
 		valv_upper.off()
 	
 	print("starting upper process")
