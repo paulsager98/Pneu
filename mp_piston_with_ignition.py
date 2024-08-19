@@ -35,9 +35,9 @@ def valve_process_bot(purge_event, purge_done_event, start_event, termination_ev
 		time.sleep(0.02)
 		#Cutter reached top
 		valv_lower.on()
-		time.sleep(0.9) #delay for upper chamber after reaching TDC
+		time.sleep(0.5) #delay for upper chamber after reaching TDC
 		chamber_upper.on()	#fire chamber
-		time.sleep(0.03)	#firing duration
+		time.sleep(0.05)	#firing duration
 		chamber_upper.off()
 			
 	def close_lower(valv_lower):
@@ -84,12 +84,12 @@ def valve_process_top(purge_event, purge_done_event, termination_event):
 		valv_upper.on()
 		time.sleep(0.1) #delay for lower chamber after reaching BDC
 		chamber_lower.on()	#fire chamber
-		time.sleep(0.1)	#firing duration
+		time.sleep(0.05)	#firing duration
 		chamber_lower.off()
 			
 	def close_upper(valv_upper):
 		print("Lower Falling Trigger")
-		time.sleep(0.7)
+		time.sleep(0.35)
 		valv_upper.off()
 		
 	
